@@ -1,0 +1,7 @@
+<h2 id="title">Welcome to Ember.js</h2>
+
+{{outlet}}
+
+<button id="btn" {{action 'initGallery'}}>Open PhotoSwipe</button>
+
+{{photo-swipe gallery=myGallery options=psOpts items=items}}
