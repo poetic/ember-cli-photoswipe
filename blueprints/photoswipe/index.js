@@ -38,8 +38,7 @@ module.exports = {
 
     var file, data;
     srcFiles.forEach(function(name) {
-      file        = fsDir + '/src/js/' + name + '.js';
-      newContents += fs.readFileSync(file);
+      newContents += fs.readFileSync(fsDir + '/src/js/' + name + '.js');
     });
 
     newContents+= "\tframework.extend(self, publicMethods); };\n";
