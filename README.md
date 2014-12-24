@@ -31,8 +31,9 @@ More functionality is on the way, this is a work in progress. You can find
 photoswipe documentation [here](http://photoswipe.com/).
 
 Ideally, I want to get it to the point where you can pass a block of images to
-the `photo-swipe` component and it will take care of animations, from thumbnail
-to gallery, recognizion of sizes, src, url and title if available.
+the `photo-swipe` component and it will take care of animations - from thumbnail
+to gallery - and to automatically pick up the source, width, height and title if
+available.
 
 Got any ideas? Please submit an issue and we can talk it out.
 
