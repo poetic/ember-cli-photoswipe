@@ -37,7 +37,13 @@
     "ember-addon",
     "photoswipe",
     "gallery",
-    "ember"
+    "ember",
+    "lightbox",
+    "photo",
+    "image",
+    "touch",
+    "swipe",
+    "zoom"
   ],
   "ember-addon": {
     "configPath": "tests/dummy/config"

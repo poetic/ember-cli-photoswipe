@@ -6,6 +6,16 @@ This addon lets you implement [Photoswipe](https://github.com/dimsemenov/PhotoSw
 {{photo-swipe gallery=myGallery options=psOpts items=items}}
 ```
 
+And then you can initialize it through an action in your controller like this:
+
+``` javascript
+actions: {
+  initGallery: function() {
+    this.get('myGallery').init();
+  }
+}
+```
+
 Any property bound to `gallery` will become the actual gallery object.
 This is optional and used only when you want to interact with the photoswipe
 instance of your gallery.
@@ -39,12 +49,14 @@ Got any ideas? Please submit an issue and we can talk it out.
 
 ## Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+* `npm install ember-cli-photoswipe --save-dev`
+* `ember g photoswipe`
 
 ## Running
 
+To run the dummy app:
+
+* `git clone https://github.com/DanyHunter/ember-cli-photoswipe.git`
 * `ember server`
 * Visit your app at http://localhost:4200.
 
