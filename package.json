@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-photoswipe",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Ember-cli adaptation of the popular photoswipe js library",
   "directories": {
     "doc": "doc",
@@ -11,7 +11,7 @@
     "build": "ember build",
     "test": "ember test"
   },
-  "repository": "https://github.com/danyhunter/ember-cli-photoswipe",
+  "repository": "https://github.com/poetic/ember-cli-photoswipe",
   "engines": {
     "node": ">= 0.10.0"
   },
