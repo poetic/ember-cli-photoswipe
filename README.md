@@ -14,7 +14,7 @@ Ember-cli Addon adaptation of the popular photo gallery library
 ```
 
 By wrapping your gallery in the component, the addon will take care of
-instanciating Photoswipe for you and for calculating the thumbnail bounds so
+instantiating Photoswipe for you and for calculating the thumbnail bounds so
 you get the nice zoom in/out animations right out of the box. Easy, right?
 
 Notice that you need to pass the attributes of `data-width` and `data-height`
