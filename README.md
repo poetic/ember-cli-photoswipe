@@ -1,6 +1,29 @@
 # Ember-cli-photoswipe
 
-This addon lets you implement [Photoswipe](https://github.com/dimsemenov/PhotoSwipe) on any ember-cli project by just including the addon. Usage is as follows:
+Ember-cli Addon adaptation of the popular photo gallery library
+[Photoswipe](https://github.com/dimsemenov/PhotoSwipe).
+
+## Usage
+
+```html
+{{#photos-wipe}}
+  <a href="http://placekitten.com/g/600/400" data-width="600" data-height="400">
+    <img src="http://placekitten.com/g/600/400" alt="kitty!">
+  </a>
+{{/photo-swipe}}
+```
+
+By wrapping your gallery in the component, the addon will take care of
+instanciating Photoswipe for you and for calculating the thumbnail bounds so
+you get the nice zoom in/out animations right out of the box. Easy, right?
+
+Notice that you need to pass the attributes of `data-width` and `data-height`
+to the `<a>` element in order for it to animate. This also works by using an `{{#each}}`
+block to populate your thumbnails. See `tests/dummy/app/templates/application.hbs`
+as an example of this.
+
+If you want to instanciate a Photoswipe gallery from an action instead of a
+thumbnail(s), you can also do the following:
 
 ```javascript
 {{photo-swipe gallery=myGallery options=psOpts items=items}}
@@ -40,12 +63,9 @@ items = [
 More functionality is on the way, this is a work in progress. You can find
 photoswipe documentation [here](http://photoswipe.com/).
 
-Ideally, I want to get it to the point where you can pass a block of images to
-the `photo-swipe` component and it will take care of animations - from thumbnail
-to gallery - and to automatically pick up the source, width, height and title if
-available.
+## Contribution
 
-Got any ideas? Please submit an issue and we can talk it out.
+If you have any ideas or feature needs, just submit an issue or pull request.
 
 ## Installation
 
