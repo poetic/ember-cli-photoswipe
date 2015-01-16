@@ -1,3 +1,7 @@
 html, body {
   margin: 20px;
 }
+
+.thumb {
+  height: 150px;
+}

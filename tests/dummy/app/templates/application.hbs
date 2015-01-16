@@ -1,7 +1,22 @@
-<h2 id="title">Welcome to Ember.js</h2>
+<h2 id="title">Photoswipe Examples</h2>
 
-{{outlet}}
-
-<button id="btn" {{action 'initGallery'}}>Open PhotoSwipe</button>
+<!-- example 1 -->
+<button class="btn" {{action 'initGallery'}}>Open PhotoSwipe</button>
 
 {{photo-swipe gallery=myGallery options=psOpts items=items}}
+
+<br>
+
+<!-- example 2 -->
+<h3>Example when passing a block</h3>
+
+{{#photo-swipe}}
+
+  {{#each img in model}}
+    <a {{bind-attr href="img.href" data-width="img.width"
+      data-height="img.height"}}>
+      <img class="thumb" {{bind-attr src="img.href" alt="img.alt"}}>
+    </a>
+  {{/each}}
+
+{{/photo-swipe}}

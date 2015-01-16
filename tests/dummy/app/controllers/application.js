@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  // example 1
   psOpts: {
     index: 1
   },
@@ -19,9 +20,11 @@ export default Ember.Controller.extend({
     }
   ],
 
+  // actions
   actions: {
     initGallery: function() {
       this.get('myGallery').init();
     }
   }
+
 });
