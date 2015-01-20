@@ -64,13 +64,18 @@ photoswipe documentation [here](http://photoswipe.com/).
 
 ## Contributing
 
-If you have ideas or feature needs that could be implemented, just submit an issue 
+If you have ideas or feature needs that could be implemented, just submit an issue
 or pull request.
 
 ## Installation
 
-* `npm install ember-cli-photoswipe --save-dev`
-* `ember g photoswipe`
+###### Ember-cli >= 0.1.5
+As easy as running `ember install:addon ember-cli-photoswipe`, which will also
+run the generator.
+
+###### Ember-cli < 0.1.5
+For versions under 0.1.5 you need to run `npm install ember-cli-photoswipe
+--save-dev` and then run `ember g photoswipe` in your project.
 
 ## Running
 
