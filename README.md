@@ -8,7 +8,7 @@ Ember-cli Addon adaptation of the popular photo gallery library
 ```html
 {{#photos-wipe}}
   <a href="http://placekitten.com/g/600/400" data-width="600" data-height="400">
-    <img src="http://placekitten.com/g/600/400" alt="kitty!">
+    <img src="http://placekitten.com/g/300/200" alt="kitty!">
   </a>
 {{/photo-swipe}}
 ```
@@ -23,7 +23,7 @@ block to populate your thumbnails. See `tests/dummy/app/templates/application.hb
 as an example of this.
 
 If you want to instanciate a Photoswipe gallery from an action instead of a
-thumbnail(s), you can also do the following:
+thumbnail, you can also do the following:
 
 ```javascript
 {{photo-swipe gallery=myGallery options=psOpts items=items}}
@@ -40,11 +40,10 @@ actions: {
 ```
 
 Any property bound to `gallery` will become the actual gallery object.
-This is optional and used only when you want to interact with the photoswipe
-instance of your gallery.
+This is used to instanciate PhotoSwipe and to interact with the live instance.
 
 Any photoswipe options can be passed to the `options` property of the component.
-For now the history module is disabled, otherwise it breaks Ember routing.
+For now the history module is disabled since it breaks ember routing.
 
 Finally, the `items` property is required and an array of objects should be
 passed to it. For example:
@@ -63,9 +62,10 @@ items = [
 More functionality is on the way, this is a work in progress. You can find
 photoswipe documentation [here](http://photoswipe.com/).
 
-## Contribution
+## Contributing
 
-If you have any ideas or feature needs, just submit an issue or pull request.
+If you have ideas or feature needs that could be implemented, just submit an issue 
+or pull request.
 
 ## Installation
 
