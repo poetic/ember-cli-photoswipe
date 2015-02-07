@@ -6,7 +6,7 @@ Ember-cli Addon adaptation of the popular photo gallery library
 ## Usage
 
 ```html
-{{#photos-wipe}}
+{{#photo-swipe}}
   <a href="http://placekitten.com/g/600/400" data-width="600" data-height="400">
     <img src="http://placekitten.com/g/300/200" alt="kitty!">
   </a>
