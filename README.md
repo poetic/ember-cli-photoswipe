@@ -1,4 +1,4 @@
-# Ember-cli-photoswipe
+# Ember-cli-photoswipe [![Build Status](https://travis-ci.org/poetic/ember-cli-photoswipe.svg)](https://travis-ci.org/poetic/ember-cli-photoswipe)
 
 Ember-cli Addon adaptation of the popular photo gallery library
 [Photoswipe](https://github.com/dimsemenov/PhotoSwipe).
