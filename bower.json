@@ -12,9 +12,7 @@
     "ember-load-initializers": "ember-cli/ember-load-initializers#0.0.2",
     "ember-qunit": "0.1.8",
     "ember-qunit-notifications": "0.0.4",
-    "qunit": "~1.15.0"
-  },
-  "devDependencies": {
-    "photoswipe": "~4.0.1"
+    "qunit": "~1.15.0",
+    "photoswipe": "4.0.1"
   }
 }
