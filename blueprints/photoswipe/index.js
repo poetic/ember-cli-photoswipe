@@ -36,7 +36,6 @@ module.exports = {
       "\t'use strict';\n"+
       "\tvar PhotoSwipe = function(template, UiClass, items, options){\n";
 
-    var file, data;
     srcFiles.forEach(function(name) {
       newContents += fs.readFileSync(fsDir + '/src/js/' + name + '.js');
     });
