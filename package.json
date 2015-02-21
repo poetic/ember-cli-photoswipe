@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-photoswipe",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Ember-cli adaptation of the popular photoswipe js library",
   "directories": {
     "doc": "doc",

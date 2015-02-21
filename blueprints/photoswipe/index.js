@@ -13,7 +13,14 @@ module.exports = {
     this.addBowerPackageToProject('photoswipe', '4.0.1');
 
     // we need to make a build without the history module.
-    var fsDir    = options.project.bowerDirectory  + '/photoswipe';
+    var fsDir = options.project.bowerDirectory  + '/photoswipe';
+
+    if (!fs.existsSync(fsDir)) {
+      var msg = 'photoswipe was not found on the bower_components directory. ';
+      msg    += 'Please run bower install --save photoswipe#4.0.1 manually first.';
+      throw new Error(msg);
+    }
+
     var fsFile   = fsDir + '/dist/photoswipe-ember.js';
     var srcFiles = [
       'framework-bridge',
