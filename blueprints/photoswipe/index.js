@@ -12,8 +12,11 @@ module.exports = {
   normalizeEntityName: function() {/* generator with no args */},
 
   afterInstall: function(options) {
-    this.addBowerPackageToProject('photoswipe', PHOTOSWIPE_VERSION);
+    return this.addBowerPackageToProject('photoswipe', PHOTOSWIPE_VERSION)
+      .then(this.buildPhotoswipeFromSource.bind(this, options));
+  },
 
+  buildPhotoswipeFromSource: function(options) {
     // we need to make a build without the history module.
     var fsDir = options.project.bowerDirectory  + '/photoswipe';
 
