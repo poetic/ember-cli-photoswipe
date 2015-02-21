@@ -3,6 +3,8 @@
 var fs    = require('fs');
 var chalk = require('chalk');
 
+var PHOTOSWIPE_VERSION = '4.0.1';
+
 module.exports = {
 
   description: 'Adds Photoswipe lib from bower and generate custom src',
@@ -10,14 +12,14 @@ module.exports = {
   normalizeEntityName: function() {/* generator with no args */},
 
   afterInstall: function(options) {
-    this.addBowerPackageToProject('photoswipe', '4.0.1');
+    this.addBowerPackageToProject('photoswipe', PHOTOSWIPE_VERSION);
 
     // we need to make a build without the history module.
     var fsDir = options.project.bowerDirectory  + '/photoswipe';
 
     if (!fs.existsSync(fsDir)) {
       var msg = 'photoswipe was not found on the bower_components directory. ';
-      msg    += 'Please run bower install --save photoswipe#4.0.1 manually first.';
+      msg    += 'Please run `bower install --save photoswipe#' + PHOTOSWIPE_VERSION + '` manually first.';
       throw new Error(msg);
     }
 
