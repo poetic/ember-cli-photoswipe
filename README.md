@@ -65,7 +65,7 @@ photoswipe documentation [here](http://photoswipe.com/).
 ## More Options
 
 You can pass the following extra options to the options property in the
-photoswipe component to hide photoswipe buttons:
+photoswipe component to hide photoswipe buttons (default to false):
 
 1. `hideClose`
 2. `hideShare`
