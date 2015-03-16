@@ -3,7 +3,7 @@
 var fs    = require('fs');
 var chalk = require('chalk');
 
-var PHOTOSWIPE_VERSION = '4.0.1';
+var PHOTOSWIPE_VERSION = '4.0.6';
 
 module.exports = {
 
@@ -30,10 +30,11 @@ module.exports = {
     var srcFiles = [
       'framework-bridge',
       'core',
-      'down-move-up-handlers',
+      'show-hide-transition',
       'items-controller',
       'tap',
-      'desktop-zoom'
+      'desktop-zoom',
+      'gestures'
       //'history'
     ];
     var newContents = "(function (root, factory) { \n"+
