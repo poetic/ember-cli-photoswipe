@@ -25,6 +25,9 @@ export default Ember.Controller.extend({
     initGallery: function() {
       this.get('myGallery').init();
     }
-  }
+  },
 
+  psTwoOpts: {
+    hideShare: true
+  }
 });

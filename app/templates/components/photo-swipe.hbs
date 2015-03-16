@@ -26,13 +26,21 @@
 
           <div class="pswp__counter"></div>
 
-          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+          {{#unless options.hideClose}}
+            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+          {{/unless}}
 
-          <button class="pswp__button pswp__button--share" title="Share"></button>
+          {{#unless options.hideShare}}
+            <button class="pswp__button pswp__button--share" title="Share"></button>
+          {{/unless}}
 
-          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+          {{#unless options.hideToggleFullScreen}}
+            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+          {{/unless}}
 
-          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+          {{#unless options.hideZoomInOut}}
+            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+          {{/unless}}
 
           <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
           <div class="pswp__preloader">

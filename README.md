@@ -62,6 +62,16 @@ items = [
 More functionality is on the way, this is a work in progress. You can find
 photoswipe documentation [here](http://photoswipe.com/).
 
+## More Options
+
+You can pass the following extra options to the options property in the
+photoswipe component to hide photoswipe buttons:
+
+1. `hideClose`
+2. `hideShare`
+3. `hideToggleFullScreen`
+4. `hideZoomInOut`
+
 ## Contributing
 
 If you have ideas or feature needs that could be implemented, just submit an issue
