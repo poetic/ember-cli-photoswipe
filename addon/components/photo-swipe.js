@@ -72,7 +72,8 @@ export default Em.Component.extend({
       this.get('calculatedItems'),
       this.get('options')
     );
-    pSwipe.init();
+    this.set('gallery', pSwipe);
+    this.get('gallery').init();
   },
 
   _getBounds: function(i) {
