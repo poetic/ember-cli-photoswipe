@@ -87,6 +87,10 @@ run the generator.
 For versions under 0.1.5 you need to run `npm install ember-cli-photoswipe
 --save-dev` and then run `ember g photoswipe` in your project.
 
+###### IMPORTANT!
+You must run `ember g photoswipe` whenever your `bower_components` gets cleared, typically in CI environments and fresh clones.
+This is because the addon modifies the content of `bower_components/photoswipe`, and it must be re-done after it was reset. You might also want to add the above command into your `postinstall` hook.
+
 ## Running
 
 To run the dummy app:
