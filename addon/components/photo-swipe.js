@@ -56,7 +56,7 @@ export default Em.Component.extend({
   click: function(evt) {
 
     var aElement = this.$(evt.target).parent();
-    var index    = aElement.index();
+    var index    = this.$("a.photo-item").index( aElement );
 
     if (Em.isEmpty(this.get('template')) || !aElement.is('a')) { return; }
 
