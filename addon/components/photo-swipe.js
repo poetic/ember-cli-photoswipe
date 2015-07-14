@@ -6,9 +6,7 @@ import Em from 'ember';
 var run = Em.run;
 
 export default Em.Component.extend({
-
   onInsert: Em.on('didInsertElement', function() {
-
     this.set('pswpEl', this.$('.pswp')[0]);
     this.set('pswpTheme', PhotoSwipeUI_Default);
 
@@ -20,7 +18,6 @@ export default Em.Component.extend({
     }
     return this._calculateItems();
   }),
-
   _buildOptions: function(getThumbBoundsFn) {
      var reqOpts = {
       history: false
@@ -53,10 +50,15 @@ export default Em.Component.extend({
     });
   },
 
+  itemObserver: function(){
+    var component = this;
+    component._initItemGallery();
+  }.observes('items'),
+
   click: function(evt) {
 
     var aElement = this.$(evt.target).parent();
-    var index    = this.$("a.photo-item").index( aElement );
+    var index    = aElement.index();
 
     if (Em.isEmpty(this.get('template')) || !aElement.is('a')) { return; }
 
@@ -72,8 +74,7 @@ export default Em.Component.extend({
       this.get('calculatedItems'),
       this.get('options')
     );
-    this.set('gallery', pSwipe);
-    this.get('gallery').init();
+    pSwipe.init();
   },
 
   _getBounds: function(i) {
