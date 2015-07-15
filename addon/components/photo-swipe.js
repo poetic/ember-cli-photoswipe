@@ -53,6 +53,11 @@ export default Em.Component.extend({
     });
   },
 
+  itemObserver: function(){
+    var component = this;
+    component._initItemGallery();
+  }.observes('items'),
+
   click: function(evt) {
 
     var aElement = this.$(evt.target).parent();
