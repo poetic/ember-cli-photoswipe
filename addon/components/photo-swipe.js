@@ -9,16 +9,18 @@ export default Em.Component.extend({
 
   onInsert: Em.on('didInsertElement', function() {
 
-    this.set('pswpEl', this.$('.pswp')[0]);
-    this.set('pswpTheme', PhotoSwipeUI_Default);
+    Em.run.scheduleOnce('afterRender', this, function() {
+      this.set('pswpEl', this.$('.pswp')[0]);
+      this.set('pswpTheme', PhotoSwipeUI_Default);
 
-    this._buildOptions();
+      this._buildOptions();
 
-    // when passing an array of items, we don't need a block
-    if (this.get('items')) {
-      return this._initItemGallery();
-    }
-    return this._calculateItems();
+      // when passing an array of items, we don't need a block
+      if (this.get('items')) {
+        return this._initItemGallery();
+      }
+      return this._calculateItems();
+    });
   }),
 
   _buildOptions: function(getThumbBoundsFn) {
@@ -53,17 +55,17 @@ export default Em.Component.extend({
     });
   },
 
-  itemObserver: function(){
+  itemObserver: Em.observer('items', function(){
     var component = this;
     component._initItemGallery();
-  }.observes('items'),
+  }),
 
   click: function(evt) {
 
     var aElement = this.$(evt.target).parent();
     var index    = this.$("a.photo-item").index( aElement );
 
-    if (Em.isEmpty(this.get('template')) || !aElement.is('a')) { return; }
+    if (!aElement.is('a')) { return; }
 
     evt.preventDefault();
 

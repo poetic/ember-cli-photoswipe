@@ -3,6 +3,7 @@
 
 var fs   = require('fs');
 var path = require('path');
+var Funnel = require('broccoli-funnel');
 
 module.exports = {
   name: 'ember-cli-photoswipe',
@@ -26,7 +27,7 @@ module.exports = {
 
   treeForPublic: function() {
     var svgPath = path.join(this.app.bowerDirectory, 'photoswipe', 'dist', 'default-skin');
-    var publicTree = this.pickFiles(this.treeGenerator(svgPath), {
+    var publicTree = new Funnel(this.treeGenerator(svgPath), {
       srcDir: '/',
       destDir: '/assets'
     });
