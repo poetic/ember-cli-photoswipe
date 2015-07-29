@@ -3,7 +3,7 @@
 var fs    = require('fs');
 var chalk = require('chalk');
 
-var PHOTOSWIPE_VERSION = '4.0.6';
+var PHOTOSWIPE_VERSION = '4.1.0';
 
 module.exports = {
 
