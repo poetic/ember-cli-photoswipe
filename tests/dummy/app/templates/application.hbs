@@ -12,10 +12,10 @@
 
 {{#photo-swipe options=psTwoOpts}}
 
-  {{#each img in model}}
-    <a {{bind-attr href="img.href" data-width="img.width"
-      data-height="img.height"}}>
-      <img class="thumb" {{bind-attr src="img.href" alt="img.alt"}}>
+  {{#each model as |img|}}
+    <a class="photo-item" href={{img.href}} data-width={{img.width}}
+      data-height={{img.height}}>
+      <img class="thumb" src={{img.href}} alt={{img.alt}}>
     </a>
   {{/each}}
 
