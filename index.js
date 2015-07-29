@@ -12,15 +12,9 @@ module.exports = {
     this.app  = app;
     var psDir = app.bowerDirectory + '/photoswipe';
 
-    if (!fs.existsSync(psDir + '/dist/photoswipe-ember.js')) {
-      var msg = '[ember-cli-photoswipe]: You need to run ember g photoswipe to ';
-      msg += 'install required dependencies for this addon.';
-      throw new Error(msg);
-    }
-
     app.import(psDir + '/dist/photoswipe.css');
     app.import(psDir + '/dist/default-skin/default-skin.css');
-    app.import(psDir + '/dist/photoswipe-ember.js');
+    app.import(psDir + '/dist/photoswipe.js');
     app.import(psDir + '/dist/photoswipe-ui-default.min.js');
     app.import(psDir + '/dist/default-skin/default-skin.svg');
   },
