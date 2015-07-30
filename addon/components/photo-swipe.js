@@ -15,11 +15,20 @@ export default Em.Component.extend({
 
       this._buildOptions();
 
-      // when passing an array of items, we don't need a block
+      /**
+       * DEPRECATED
+       * 
+       * Code exists for backward compatability of block usage 
+       * up to ember-cli-photoswipe versions 1.0.1. 
+       */
       if (this.get('items')) {
         return this._initItemGallery();
       }
+      console.log("WARNING: See https://github.com/poetic/ember-cli-photoswipe#usage");
       return this._calculateItems();
+      /**
+       * END DEPRECATED
+       */
     });
   }),
 
@@ -59,8 +68,18 @@ export default Em.Component.extend({
     var component = this;
     component._initItemGallery();
   }),
-
+  
+  /**
+   * DEPRECATED
+   * 
+   * Code exists for backward compatability of block usage 
+   * up to ember-cli-photoswipe versions 1.0.1. 
+   */  
   click: function(evt) {
+
+    if (this.get('items')) {
+      return; // ignore - not using deprecated block form
+    }
 
     var aElement = this.$(evt.target).parent();
     var index    = this.$("a.photo-item").index( aElement );
@@ -81,7 +100,10 @@ export default Em.Component.extend({
     );
     this.set('gallery', pSwipe);
     this.get('gallery').init();
-  },
+  }, 
+  /**
+   * END DEPRECATED
+   */   
 
   _getBounds: function(i) {
     var img      = this.$('img').get(i),
@@ -90,6 +112,31 @@ export default Em.Component.extend({
     return {x: position.left, y: position.top, w: width};
   },
 
+  actions: {
+    launchGallery(item) {
+      this._buildOptions(this._getBounds.bind(this));
+      if (item !== undefined) {
+        var index = this.get('items').indexOf(item);
+        this.set('options.index', index);
+      }
+      var pSwipe = new PhotoSwipe(
+        this.get('pswpEl'),
+        this.get('pswpTheme'),
+        this.get('items'),
+        this.get('options')
+      );
+      this.set('gallery', pSwipe);
+      this.get('gallery').init();
+    }
+  },
+
+
+  /**
+   * DEPRECATED
+   * 
+   * Code exists for backward compatability of block usage 
+   * up to ember-cli-photoswipe versions 1.0.1. 
+   */  
   _calculateItems: function() {
     var items           = this.$().find('a');
     var calculatedItems = Em.A(items).map(function(i, item) {
@@ -102,5 +149,9 @@ export default Em.Component.extend({
       };
     });
     this.set('calculatedItems', calculatedItems);
-  }
+  }  
+  /**
+   * END DEPRECATED
+   */      
+
 });

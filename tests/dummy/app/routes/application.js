@@ -4,29 +4,29 @@ export default Ember.Route.extend({
   model: function() {
     return [
       {
-        href: 'http://placekitten.com/g/600/450',
-        width: 600, height: 450,
-        alt: 'Image Description'
+        src: 'http://placekitten.com/g/600/450',
+        w: 600, h: 450,
+        title: 'Image Description'
       },
       {
-        href: 'http://placekitten.com/630/600',
-        width: 630, height: 600,
-        alt: 'kitty'
+        src: 'http://placekitten.com/630/600',
+        w: 630, h: 600,
+        title: 'kitty'
       },
       {
-        href: 'http://placekitten.com/g/450/450',
-        width: 450, height: 450,
-        alt: 'more kitty'
+        src: 'http://placekitten.com/g/450/450',
+        w: 450, h: 450,
+        title: 'more kitty'
       },
       {
-        href: 'http://placekitten.com/g/400/600',
-        width: 400, height: 600,
-        alt: 'more more kitty'
+        src: 'http://placekitten.com/g/400/600',
+        w: 400, h: 600,
+        title: 'more more kitty'
       },
       {
-        href: 'http://placekitten.com/g/500/400',
-        width: 500, height: 400,
-        alt: 'yup... kitty'
+        src: 'http://placekitten.com/g/500/400',
+        w: 500, h: 400,
+        title: 'yup... kitty'
       }
     ];
   }
