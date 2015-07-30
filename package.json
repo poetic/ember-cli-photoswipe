@@ -18,8 +18,7 @@
   "author": "Daniel Ochoa <dannytenaglias@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "ember-cli-babel": "^5.0.0",
-    "chalk": "^1.1.0"
+    "ember-cli-babel": "^5.0.0"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.0.2",
