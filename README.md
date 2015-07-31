@@ -6,10 +6,8 @@ Ember-cli Addon adaptation of the popular photo gallery library
 ## Usage
 
 ```html
-{{#photo-swipe}}
-  <a class="photo-item" href="http://placekitten.com/g/600/400" data-width="600" data-height="400">
-    <img src="http://placekitten.com/g/300/200" alt="kitty!">
-  </a>
+{{#photo-swipe items=model as |img|}}
+    <img class="thumb" src={{img.src}} alt={{img.title}}>
 {{/photo-swipe}}
 ```
 
@@ -17,10 +15,7 @@ By wrapping your gallery in the component, the addon will take care of
 instantiating Photoswipe for you and for calculating the thumbnail bounds so
 you get the nice zoom in/out animations right out of the box. Easy, right?
 
-Notice that you need to pass the attributes of `data-width` and `data-height`
-to the `<a>` element in order for it to animate. This also works by using an `{{#each}}`
-block to populate your thumbnails. See `tests/dummy/app/templates/application.hbs`
-as an example of this.
+See `tests/dummy/app/templates/application.hbs` as an example of this.
 
 If you want to instanciate a Photoswipe gallery from an action instead of a
 thumbnail, you can also do the following:

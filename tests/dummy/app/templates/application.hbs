@@ -10,13 +10,8 @@
 <!-- example 2 -->
 <h3>Example when passing a block</h3>
 
-{{#photo-swipe options=psTwoOpts}}
+{{#photo-swipe options=psTwoOpts items=model as |img|}}
 
-  {{#each model as |img|}}
-    <a class="photo-item" href={{img.href}} data-width={{img.width}}
-      data-height={{img.height}}>
-      <img class="thumb" src={{img.href}} alt={{img.alt}}>
-    </a>
-  {{/each}}
+    <img class="thumb" src={{img.src}} alt={{img.title}}>
 
 {{/photo-swipe}}
