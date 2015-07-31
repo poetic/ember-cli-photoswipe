@@ -1,7 +1,7 @@
 # Ember-cli-photoswipe [![Build Status](https://travis-ci.org/poetic/ember-cli-photoswipe.svg)](https://travis-ci.org/poetic/ember-cli-photoswipe)
 
 Ember-cli Addon adaptation of the popular photo gallery library
-[Photoswipe](https://github.com/dimsemenov/PhotoSwipe).
+[PhotoSwipe](https://github.com/dimsemenov/PhotoSwipe).
 
 ## Usage
 
@@ -12,12 +12,12 @@ Ember-cli Addon adaptation of the popular photo gallery library
 ```
 
 By wrapping your gallery in the component, the addon will take care of
-instantiating Photoswipe for you and for calculating the thumbnail bounds so
+instantiating PhotoSwipe for you and for calculating the thumbnail bounds so
 you get the nice zoom in/out animations right out of the box. Easy, right?
 
 See `tests/dummy/app/templates/application.hbs` as an example of this.
 
-If you want to instanciate a Photoswipe gallery from an action instead of a
+If you want to instantiate a PhotoSwipe gallery from an action instead of a
 thumbnail, you can also do the following:
 
 ```javascript
@@ -35,9 +35,9 @@ actions: {
 ```
 
 Any property bound to `gallery` will become the actual gallery object.
-This is used to instanciate PhotoSwipe and to interact with the live instance.
+This is used to instantiate PhotoSwipe and to interact with the live instance.
 
-Any photoswipe options can be passed to the `options` property of the component.
+Any PhotoSwipe options can be passed to the `options` property of the component.
 For now the history module is disabled since it breaks ember routing.
 
 Finally, the `items` property is required and an array of objects should be
@@ -55,12 +55,12 @@ items = [
 ```
 
 More functionality is on the way, this is a work in progress. You can find
-photoswipe documentation [here](http://photoswipe.com/).
+PhotoSwipe documentation [here](http://photoswipe.com/).
 
 ## More Options
 
 You can pass the following extra options to the options property in the
-photoswipe component to hide photoswipe buttons (default to false):
+PhotoSwipe component to hide PhotoSwipe buttons (default to false):
 
 1. `hideClose`
 2. `hideShare`
