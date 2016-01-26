@@ -2,6 +2,7 @@
 
 <!-- example 1 -->
 <button class="btn" {{action 'initGallery'}}>Open PhotoSwipe</button>
+<button class="change-btn" {{action 'changeItems'}}>Change Items</button>
 
 {{photo-swipe gallery=myGallery options=psOpts items=items}}
 
@@ -10,7 +11,7 @@
 <!-- example 2 -->
 <h3>Example when passing a block</h3>
 
-{{#photo-swipe options=psTwoOpts items=model as |img|}}
+{{#photo-swipe options=psTwoOpts items=items as |img|}}
 
     <img class="thumb" src={{img.src}} alt={{img.title}}>
 
