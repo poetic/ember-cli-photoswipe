@@ -7,7 +7,7 @@ Ember-cli Addon adaptation of the popular photo gallery library
 
 ```html
 {{#photo-swipe items=model as |img|}}
-    <img class="thumb" src={{img.src}} alt={{img.title}}>
+  <img class="thumb" src={{img.src}} alt={{img.title}}>
 {{/photo-swipe}}
 ```
 
@@ -16,6 +16,21 @@ instantiating PhotoSwipe for you and for calculating the thumbnail bounds so
 you get the nice zoom in/out animations right out of the box. Easy, right?
 
 See `tests/dummy/app/templates/application.hbs` as an example of this.
+
+The `items` property is required and an array of objects should be
+passed to it. PhotoSwipe expects these items to have the following structure:
+
+```javascript
+[
+  {
+    src: 'http://placekitten.com/g/600/400',
+    w: 600,
+    h: 400,
+    title: 'whooa',
+    msrc: '(optional) larger image'
+  }
+]
+```
 
 If you want to instantiate a PhotoSwipe gallery from an action instead of a
 thumbnail, you can also do the following:
@@ -39,20 +54,6 @@ This is used to instantiate PhotoSwipe and to interact with the live instance.
 
 Any PhotoSwipe options can be passed to the `options` property of the component.
 For now the history module is disabled since it breaks ember routing.
-
-Finally, the `items` property is required and an array of objects should be
-passed to it. For example:
-
-```javascript
-items = [
-  {
-    src: 'http://placekitten.com/g/600/400',
-    w: 600,
-    h: 400,
-    title: 'whooa'
-  }
-]
-```
 
 More functionality is on the way, this is a work in progress. You can find
 PhotoSwipe documentation [here](http://photoswipe.com/).

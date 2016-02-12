@@ -16,8 +16,10 @@ test('visiting /', function() {
   visit('/');
 
   andThen(function() {
-    equal(find('button.btn').length, 1, 'Page containts button');
+    equal(find('button.btn').length, 1, 'Page contains button');
     click(find('button.btn'));
+
+    equal(find('img.thumb').length, 2);
   });
 
   andThen(function() {
@@ -30,4 +32,12 @@ test('visiting /', function() {
     click('.pswp__button--close');
   });
 
+  andThen(function() {
+    equal(find('button.change-btn').length, 1, 'Page contains change button');
+    click(find('button.change-btn'));
+  });
+
+  andThen(function() {
+    equal(find('img.thumb').length, 1);
+  });
 });

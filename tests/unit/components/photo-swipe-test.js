@@ -4,7 +4,9 @@ import {
   test
 } from 'ember-qunit';
 
-moduleForComponent('photo-swipe', 'PhotoSwipeComponent');
+moduleForComponent('photo-swipe', 'PhotoSwipeComponent', {
+  unit: true
+});
 
 test('it renders', function() {
   expect(2);
@@ -13,14 +15,14 @@ test('it renders', function() {
   var component = this.subject();
   equal(component._state, 'preRender');
 
-  // appends the component to the page
-  this.append();
+  // renders the component to the page
+  this.render();
   equal(component._state, 'inDOM');
 });
 
 test('it renders the photoswipe template', function() {
   expect(1);
-  this.append();
+  this.render();
   var component = this.subject();
   var photoswipe = component.$('.pswp');
 
@@ -29,29 +31,36 @@ test('it renders the photoswipe template', function() {
 
 test('the gallery attribute should be empty on insert.', function() {
   expect(1);
-  this.append();
   var component = this.subject();
 
-  equal(component.get('gallery'), undefined, 'should not be set yet.');
+  Ember.run(function () {
+    equal(component.get('gallery'), undefined, 'should not be set yet.');
+  });
 });
 
 test('the gallery attribute should be set when you pass items', function() {
   expect(2);
-  var component = this.subject();
-  component.set('items', [
-    {
-      src: 'http://placekitten.com/g/600/400',
-      w: 600,
-      h: 400,
-      title: 'whooa'
-    },
-    {
-      src: 'http://placekitten.com/g/1200/900',
-      w: 1200,
-      h: 900
-    }
-  ]);
-  this.append();
-  ok(component.get('gallery'));
-  equal(typeof component.get('gallery'), 'object');
+
+  Ember.run(() => {
+    var component = this.subject();
+    component.set('items', [
+      {
+        src: 'http://placekitten.com/g/600/400',
+        w: 600,
+        h: 400,
+        title: 'whooa'
+      },
+      {
+        src: 'http://placekitten.com/g/1200/900',
+        w: 1200,
+        h: 900
+      }
+    ]);
+
+    this.render();
+
+    var gallery = component.get('gallery');
+    ok(gallery);
+    equal(typeof gallery, 'object');
+  });
 });
