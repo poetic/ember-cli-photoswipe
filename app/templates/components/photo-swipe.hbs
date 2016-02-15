@@ -1,8 +1,8 @@
 {{#if hasBlock}}
   {{#if items}}
-    {{#each items as |item|}}
+    {{#each items as |item index|}}
       <a {{action 'launchGallery' item}} data-width={{item.w}} data-height={{item.h}}>
-          {{yield item}}
+          {{yield item index}}
       </a>
     {{/each}}
   {{else}}
