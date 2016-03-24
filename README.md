@@ -87,7 +87,7 @@ For versions under 0.1.5 you need to run `npm install ember-cli-photoswipe
 
 To run the dummy app:
 
-* `git clone https://github.com/DanyHunter/ember-cli-photoswipe.git`
+* `git clone https://github.com/poetic/ember-cli-photoswipe.git`
 * `ember server`
 * Visit your app at http://localhost:4200.
 
