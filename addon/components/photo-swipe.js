@@ -52,6 +52,7 @@ export default Em.Component.extend({
       this.get('items'),
       this.get('options')
     ));
+    if(this.get('reinit')) this.sendAction('reinit', this.get('gallery'));
     this._reInitOnClose();
   },
 
