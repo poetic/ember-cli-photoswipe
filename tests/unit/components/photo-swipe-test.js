@@ -65,7 +65,7 @@ test('the gallery attribute should be set when you pass items', function() {
   });
 });
 
-test('the reinit action is called when the gallery items change', function() {
+test('the reinit action should be called when the gallery items change', function() {
   // reinit will be called 3 times in the test
   // Once when setting the setting the properties
   // Second when you render the Component
@@ -97,5 +97,5 @@ test('the reinit action is called when the gallery items change', function() {
     this.render();
 
     component.set('items', []);
-  })
+  });
 });
