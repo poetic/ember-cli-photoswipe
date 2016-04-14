@@ -64,3 +64,38 @@ test('the gallery attribute should be set when you pass items', function() {
     equal(typeof gallery, 'object');
   });
 });
+
+test('the reinit action is called when the gallery items change', function() {
+  // reinit will be called 3 times in the test
+  // Once when setting the setting the properties
+  // Second when you render the Component
+  // Third when you change the items array
+  expect(6);
+
+  Ember.run(()=> {
+    var component = this.subject();
+    component.setProperties({
+      reinit: function(gallery){
+        ok(gallery);
+        equal(typeof gallery, 'object');
+      },
+      items: [
+        {
+          src: 'http://placekitten.com/g/600/400',
+          w: 600,
+          h: 400,
+          title: 'whooa'
+        },
+        {
+          src: 'http://placekitten.com/g/1200/900',
+          w: 1200,
+          h: 900
+        }
+      ]
+    });
+
+    this.render();
+
+    component.set('items', []);
+  })
+});
