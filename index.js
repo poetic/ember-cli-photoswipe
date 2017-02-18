@@ -12,10 +12,12 @@ module.exports = {
     this.app  = app;
     var psDir = app.bowerDirectory + '/photoswipe';
 
-    app.import(psDir + '/dist/photoswipe.css');
-    app.import(psDir + '/dist/default-skin/default-skin.css');
-    app.import(psDir + '/dist/photoswipe.js');
-    app.import(psDir + '/dist/photoswipe-ui-default.min.js');
+    if (!process.env.EMBER_CLI_FASTBOOT) {
+      app.import(psDir + '/dist/photoswipe.css');
+      app.import(psDir + '/dist/default-skin/default-skin.css');
+      app.import(psDir + '/dist/photoswipe.js');
+      app.import(psDir + '/dist/photoswipe-ui-default.min.js');
+    }
   },
 
   treeForPublic: function() {
